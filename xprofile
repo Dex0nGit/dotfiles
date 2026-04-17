@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+export XDG_CURRENT_DESKTOP=sxwm
+export GTK_USE_PORTAL=1
+export XCURSOR_THEME="Bibata-Rainbow-Original"
+export XCURSOR_SIZE=22
+xsetroot -cursor_name left_ptr &
+xdg-mime default org.gnome.Nautilus.desktop inode/directory
+/usr/lib/xdg-desktop-portal &
+/usr/lib/xdg-desktop-portal-gtk &
+
+nm-applet &
+picom &
+sxbar &
+feh --bg-fill /home/dex/Pictures/pinku.jpeg
+# xwinwrap -ov -g 1366x768 -- mpv -wid WID --loop --no-audio --vo=gpu --hwdec=auto /home/dex/Downloads/aab.mp4 &
+exec sxwm
+wpctl set-mute @DEFAULT_AUDIO_SINK@ 0
+amixer set Master unmute
